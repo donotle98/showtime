@@ -21,8 +21,9 @@ import argparse
 import sys
 import logging
 
-from showtime import __version__
+# from showtime import __version__
 
+__version__ = "0.0.1"
 __author__ = "Donovan T. Le"
 __copyright__ = "Donovan T. Le"
 __license__ = "mit"

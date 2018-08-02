@@ -15,3 +15,7 @@ def test_fib():
     assert fib(7) == 13
     with pytest.raises(AssertionError):
         fib(-10)
+
+
+def test_why_dont_you_do_more_work():
+    assert False
