@@ -3,7 +3,7 @@ showtime
 ========
 
 
-Add a short description here!
+This is the backend of showtime. It stores entertainment schedules.
 
 
 Description
