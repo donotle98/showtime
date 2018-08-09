@@ -20,6 +20,7 @@ class TestFib(TestCase):
         genre_url = requests.get('http://api.tvmedia.ca/tv/v4/genres/movies?api_key=881a51710c249ba3a6cf179cb54bb437').text
         genre_html = soup(genre_url, "html.parser")
         print(genre_html.prettify())
+        print("Hello")
 
 
 
