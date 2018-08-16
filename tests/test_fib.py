@@ -1,9 +1,8 @@
+import json
 from unittest import TestCase
-
-# import urllib2
-
 from urllib.request import urlopen
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup as soup
+import requests
 
 
 class TestFib(TestCase):
@@ -11,23 +10,20 @@ class TestFib(TestCase):
         assert True
 
     def test_scrap_some_data(self):
-        print("Hi!")
-        quote_page = 'http://www.bloomberg.com/quote/SPX:IND'
-        page = urlopen(quote_page)
 
-        soup = BeautifulSoup(page, 'html.parser')
+        # page_link = 'http://api.tvmedia.ca/tv/v4/genres/movies?api_key=881a51710c249ba3a6cf179cb54bb437'
+        # page_response = json.load(urlopen(page_link))
+        # page_content = soup(page_response.content, "html.parser")
+        # show_data = page_content.find_all('genre')
+        # print(show_data)
 
-        shit_bird = soup.find('h1')
-        shit_bird.get_text()
-        assert shit_bird.get_text() == "Terms of Service Violation"
+        genre_url = requests.get('http://api.tvmedia.ca/tv/v4/genres/movies?api_key=881a51710c249ba3a6cf179cb54bb437').text
+        genre_html = soup(genre_url, "html.parser")
+        print(genre_html.prettify())
 
-        print(shit_bird.get_text())
 
-        api_key = '881a51710c249ba3a6cf179cb54bb437'
-        page_link = 'http://api.tvmedia.ca/tv/v4/genres/movies?api_key=881a51710c249ba3a6cf179cb54bb437'
-        from pip._vendor.urllib3 import response
-        page_response = response.(page_link, timeout=)
-        page_content = BeautifulSoup(page_response.content, "html.parser")
 
-        show_data = page_content.find_all('genre')
-        print(show_data)
+
+
+
+
